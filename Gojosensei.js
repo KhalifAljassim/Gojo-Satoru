@@ -252,7 +252,7 @@ const reply = (teks) => {
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return reply(`تم تثبيت المجموعة باستخدام Anti-Link لكنني لن اطردك 😉، لانك ارسلت رابط المجموعة هذا ❤`)
         if (isAdmins) return reply("تم تثبيت المجموعة باستخدام Anti-Link لكنني لن أطردك 😉 ، لأنك مشرف عن المجموعة❤️`)
-        if (isCreator) return reply("تم تثبيت المجموعة باستخدام Anti-Link لكنني لن أطردك 😉 ، لأنك صاحب المجموعة ههههههههه ، تعتقد أنني سأخونك هوه")
+        if (isCreator) return reply(`تم تثبيت المجموعة باستخدام Anti-Link لكنني لن أطردك 😉 ، لأنك صاحب المجموعة ههههههههه ، تعتقد أنني سأخونك هوه`)
         GojoMdNx.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -340,7 +340,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'تخمين الاغاني', buttonText: { displayText: 'تخمين الأغنية' }, type: 1 }], `🎮 تخمين الموسيقى 🎮\n\إجابة خاطئة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -349,7 +349,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await reply(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                await reply(`🎮 مسابقة الرياضيات 🎮\n\إجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟ Send ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -358,7 +358,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'تخمين الصور', buttonText: { displayText: 'تخمين الصورة' }, type: 1 }], `🎮 خمن الصورة 🎮\n\الاجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -367,7 +367,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'معرفة الكلمة', buttonText: { displayText: 'خمن الكلمة' }, type: 1 }], `🎮 خمن الكلمة 🎮\n\اجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -377,7 +377,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'تخمين الورق', buttonText: { displayText: 'خمن الورقة' }, type: 1 }], `🎮 خمن الورقة 🎮\n\اجابة صحيحة 🎉\n*${deskripsi}*\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
@@ -387,7 +387,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'تخمين الجمل', buttonText: { displayText: 'تخمين الجملة' }, type: 1 }], `🎮 تخمين الجملة 🎮\n\اجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -396,7 +396,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'تخمين الكلمات', buttonText: { displayText: 'تخمين الكلمات' }, type: 1 }], `🎮 تخمين الكلمات 🎮\n\اجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -405,7 +405,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'حل الالغاز', buttonText: { displayText: 'حل اللغز' }, type: 1 }], `🎮 حل اللغز 🎮\n\اجابة صحيحة 🎉\n\تريد أن تلعب مرة أخرى؟  اضغط على الزر أدناه`, GojoMdNx.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -426,10 +426,10 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    }
 	    if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
 	    reply({
-	    '-3': 'Game Has Ended',
-	    '-2': 'Invalid',
+	    '-3': 'انتهت اللعبة',
+	    '-2': 'غير صالح',
 	    '-1': 'Invalid Position',
-	    0: 'Invalid Position',
+	    0: 'موقف غير صحيح',
 	    }[ok])
 	    return !0
 	    }
@@ -465,9 +465,9 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
-Typed *surrender* to surrender and admited defeat`
-	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
-	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
+* استسلام * للاستسلام والاعتراف بالهزيمة`
+	    if ((room.game._currentTurn ^ هو الاستسلام ? room.x : room.o) !== m.chat)
+	    room[room.game._currentTurn ^ هو الاستسلام ? 'x' : 'o'] = m.chat
 	    if (room.x !== room.o) await GojoMdNx.sendText(room.x, str, m, { mentions: parseMention(str) } )
 	    await GojoMdNx.sendText(room.o, str, m, { mentions: parseMention(str) } )
 	    if (isTie || isWin) {
@@ -481,24 +481,24 @@ Typed *surrender* to surrender and admited defeat`
 	    if (roof) {
 	    let win = ''
 	    let tie = false
-	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nope(k.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
-	    if (/^(reject|no|later|n|nope(k.)?yes)/i.test(m.text)) {
+	    if (m.sender == roof.p2 && /^(acc(ept)?|موافق|اي|طيب?|رفض|لا|بعدين|نوب(k.)?اي|ايوه)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
+	    if (/^رفض|لا|بعدين|بطلت|نوب(k.)?اي)/i.test(m.text)) {
 	    GojoMdNx.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
-	    roof.status = 'play'
+	    roof.status = 'لعب'
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    GojoMdNx.sendText(m.chat, `Suit Has Been Sent To Chat
+	    GojoMdNx.sendText(m.chat, `تم إرسال البدلة إلى الدردشة
 
 @${roof.p.split`@`[0]} dan 
 @${roof.p2.split`@`[0]}
 
-Please Choose A Suit In The Respective Chat"
-Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) GojoMdNx.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
+الرجاء اختيار بدلة في الدردشة المعنية"
+اضغط https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
+	    if (!roof.pilih) GojoMdNx.sendText(roof.p, `ارجو ان تختار \nحجرة🗿\ورقة📄\nمقص✂️`, m)
 	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
 	    if (!roof.pilih && !roof.pilih2) GojoMdNx.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
