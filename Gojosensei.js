@@ -246,13 +246,13 @@ const reply = (teks) => {
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
         reply(`「 ANTI LINK 」\n\n لقد تم اكتشاف أنك ترسل رابط مجموعة ، آسف سيتم طردك !`)
-        if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
+        if (!isBotAdmins) return reply(`أنا لست مشرفًا ، كيف يمكنني طرد شخص يرسل رابطًا 😒`)
         let gclink = (`https://chat.whatsapp.com/`+await GojoMdNx.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
-        if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
-        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐦`)
+        if (isgclink) return reply(`تم تثبيت المجموعة باستخدام Anti-Link لكنني لن اطردك 😉، لانك ارسلت رابط المجموعة هذا ❤`)
+        if (isAdmins) return reply("تم تثبيت المجموعة باستخدام Anti-Link لكنني لن أطردك 😉 ، لأنك مشرف عن المجموعة❤️`)
+        if (isCreator) return reply("تم تثبيت المجموعة باستخدام Anti-Link لكنني لن أطردك 😉 ، لأنك صاحب المجموعة ههههههههه ، تعتقد أنني سأخونك هوه")
         GojoMdNx.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
