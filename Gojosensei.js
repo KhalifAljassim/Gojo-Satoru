@@ -498,13 +498,13 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 
 الرجاء اختيار بدلة في الدردشة المعنية"
 اضغط https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) GojoMdNx.sendText(roof.p, `ارجو ان تختار \nحجرة🗿\ورقة📄\nمقص✂️`, m)
-	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) GojoMdNx.sendText(roof.p, `ارجو ان تختار \n✊🏻\🖐🏻\n✌🏻`, m)
+	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, `ارجو منك الاختيار \n\n✊🏻\n🖐🏻\n✌🏻`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) GojoMdNx.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
+	    if (!roof.pilih && !roof.pilih2) GojoMdNx.sendText(m.chat, `كلا اللاعبين لا يريدان اللعب,\nتم إلغاء الدعوى`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    GojoMdNx.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
+	    GojoMdNx.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} لم تختر البدلة ، انتهت اللعبة!`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -512,21 +512,21 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 	    }
 	    let jwb = m.sender == roof.p
 	    let jwb2 = m.sender == roof.p2
-	    let g = /scissors/i
-	    let b = /rock/i
-	    let k = /paper/i
-	    let reg = /^(scissors|rock|paper)/i
+	    let g = /✌🏻/i
+	    let b = /✊🏻/i
+	    let k = /🖐🏻/i
+	    let reg = /^(✌🏻|✊🏻|🖐🏻)/i
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
-	    reply(`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    reply(`لقد اخترت ${m.text} ${!roof.pilih2 ? `\n\nفي انتظار أن يختار الخصم` : ''}`)
+	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, '_اختار الخصم_\nالآن دورك', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
-	    reply(`You Have Chosen ${m.text} ${!roof.pilih ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih) GojoMdNx.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    reply(`لقد اخترت ${m.text} ${!roof.pilih ? `\n\nفي انتظار أن يختار الخصم` : ''}`)
+	    if (!roof.pilih) GojoMdNx.sendText(roof.p, '_اختار الخصم_\nالآن دورك', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -539,10 +539,10 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    GojoMdNx.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    GojoMdNx.sendText(roof.asal, `_*نتائج البدلة*_${tie ? '\nمسلسل' : ''}
 
-@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
-@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
+@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == يفوز ؟ ` يفوز \n` : ` يخسر \n`}
+@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == فوز؟ ` يفوز \n` : ` يخسر \n`}
 `.trim(), m, { mentions: [roof.p, roof.p2] })
 	    delete this.suit[roof.id]
 	    }
@@ -556,7 +556,7 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
             if (!afkTime || afkTime < 0) continue
             let reason = user.afkReason || ''
             reply(`
-Don't tag him!
+لا تمنعه!
 He's in AFK/Offline ${reason ? 'dengan alasan ' + reason : 'no reason'}
 It's been ${clockString(new Date - afkTime)}
 `.trim())
